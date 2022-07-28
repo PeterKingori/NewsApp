@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">News App</string>
+    <string name="favourite_icon_fab">Favourite icon fab</string>
+    <string name="search">Search…</string>
+    <string name="article_image">Article image thumbnail</string>
+    <string name="source">Source</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="published_at">Published at</string>
 </resources>
