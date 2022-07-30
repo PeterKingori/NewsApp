@@ -1,6 +1,6 @@
 package com.pkndegwa.newsapp.api
 
-import com.pkndegwa.newsapp.ui.NewsResponse
+import com.pkndegwa.newsapp.models.NewsResponse
 import com.pkndegwa.newsapp.util.Constants.Companion.APIKEY
 import retrofit2.Response
 import retrofit2.http.GET

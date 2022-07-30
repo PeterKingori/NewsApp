@@ -1,4 +1,4 @@
-package com.pkndegwa.newsapp.ui
+package com.pkndegwa.newsapp.models
 
 data class NewsResponse(
     val articles: List<Article>,

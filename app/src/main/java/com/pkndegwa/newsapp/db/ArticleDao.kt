@@ -2,7 +2,7 @@ package com.pkndegwa.newsapp.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.pkndegwa.newsapp.ui.Article
+import com.pkndegwa.newsapp.models.Article
 
 /**
  * A public interface that exposes database access functions.

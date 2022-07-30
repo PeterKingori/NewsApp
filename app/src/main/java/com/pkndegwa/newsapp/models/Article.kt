@@ -1,8 +1,11 @@
-package com.pkndegwa.newsapp.ui
+package com.pkndegwa.newsapp.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+/**
+ * This data class defines an article.
+ */
 @Entity(
     tableName = "articles"
 )
