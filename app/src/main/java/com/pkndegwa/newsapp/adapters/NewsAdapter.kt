@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.pkndegwa.newsapp.databinding.ItemArticlePreviewBinding
 import com.pkndegwa.newsapp.models.Article
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * Adapter for the RecyclerView in BreakingNewsFragment, SavedNewsFragment and SearchNewsFragment.
@@ -21,8 +23,13 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
                 sourceTextView.text = article.source.name
                 titleTextView.text = article.title
                 descriptionTextView.text = article.description
-                publishedAtTextView.text = article.publishedAt
+                publishedAtTextView.text = getFormattedDate(article.publishedAt)
             }
+        }
+
+        private fun getFormattedDate(date: String): String? {
+            val formattedDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(date)
+            return formattedDate?.let { SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(it) }
         }
     }
 
