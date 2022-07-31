@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.pkndegwa.newsapp.R
 import com.pkndegwa.newsapp.adapters.NewsAdapter
 import com.pkndegwa.newsapp.databinding.FragmentBreakingNewsBinding
 import com.pkndegwa.newsapp.ui.NewsViewModel
@@ -50,6 +52,13 @@ class BreakingNewsFragment: Fragment() {
                     showProgressBar()
                 }
             }
+        }
+
+        newsAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("article", it)
+            }
+            findNavController().navigate(R.id.action_breakingNewsFragment_to_articleFragment, bundle)
         }
     }
 

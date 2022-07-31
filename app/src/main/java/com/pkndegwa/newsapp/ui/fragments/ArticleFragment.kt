@@ -1,17 +1,33 @@
 package com.pkndegwa.newsapp.ui.fragments
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.pkndegwa.newsapp.R
-import com.pkndegwa.newsapp.ui.MainActivity
-import com.pkndegwa.newsapp.ui.NewsViewModel
+import com.pkndegwa.newsapp.databinding.FragmentArticleBinding
 
 class ArticleFragment: Fragment(R.layout.fragment_article) {
-    private lateinit var viewModel: NewsViewModel
+    private var _binding: FragmentArticleBinding? = null
+    // This property is only valid between onCreateView and onDestroyView.
+    private val binding get() = _binding!!
+
+    private val args: ArticleFragmentArgs by navArgs()
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        _binding = FragmentArticleBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = (activity as MainActivity).viewModel
+        val article = args.article
+        binding.articleWebView.apply {
+            webViewClient = WebViewClient()
+            loadUrl(article.url)
+        }
     }
 }
