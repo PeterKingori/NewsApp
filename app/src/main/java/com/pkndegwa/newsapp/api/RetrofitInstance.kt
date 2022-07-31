@@ -30,7 +30,7 @@ class RetrofitInstance {
         /**
          * A public Api object that exposes the lazy-initialized Retrofit service
          */
-        val api by lazy {
+        val api: NewsApi by lazy {
             retrofit.create(NewsApi::class.java)
         }
     }

@@ -8,7 +8,7 @@ import com.pkndegwa.newsapp.ui.MainActivity
 import com.pkndegwa.newsapp.ui.NewsViewModel
 
 class ArticleFragment: Fragment(R.layout.fragment_article) {
-    lateinit var viewModel: NewsViewModel
+    private lateinit var viewModel: NewsViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
