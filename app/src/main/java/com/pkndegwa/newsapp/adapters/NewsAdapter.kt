@@ -20,10 +20,10 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
         fun bind(article: Article) {
             Glide.with(binding.root).load(article.urlToImage).into(binding.articleImageView)
             binding.apply {
-                sourceTextView.text = article.source.name
+                sourceTextView.text = article.source?.name
                 titleTextView.text = article.title
                 descriptionTextView.text = article.description
-                publishedAtTextView.text = getFormattedDate(article.publishedAt)
+                publishedAtTextView.text = article.publishedAt?.let { getFormattedDate(it) }
             }
         }
 
