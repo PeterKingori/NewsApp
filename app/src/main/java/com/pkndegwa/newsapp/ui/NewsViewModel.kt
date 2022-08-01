@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.pkndegwa.newsapp.models.Article
 import com.pkndegwa.newsapp.models.NewsResponse
 import com.pkndegwa.newsapp.repository.NewsRepository
 import com.pkndegwa.newsapp.util.Resource
@@ -51,5 +52,15 @@ class NewsViewModel(private val newsRepository: NewsRepository) : ViewModel() {
             }
         }
         return Resource.Error(response.message())
+    }
+
+    fun saveArticle(article: Article) = viewModelScope.launch {
+        newsRepository.upsert(article)
+    }
+
+    fun getSavedNews() = newsRepository.getSavedNews()
+
+    fun deleteArticle(article: Article) = viewModelScope.launch {
+        newsRepository.deleteArticle(article)
     }
 }
