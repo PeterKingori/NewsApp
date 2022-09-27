@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">News App</string>
+    <string name="app_name">Smartherd News App</string>
     <string name="favourite_icon_fab">Favourite icon fab</string>
     <string name="search">Search…</string>
     <string name="article_image">Article image thumbnail</string>
