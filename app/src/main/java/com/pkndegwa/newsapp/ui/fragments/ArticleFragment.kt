@@ -9,11 +9,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
-import com.pkndegwa.newsapp.R
 import com.pkndegwa.newsapp.databinding.FragmentArticleBinding
 import com.pkndegwa.newsapp.ui.NewsViewModel
 
-class ArticleFragment: Fragment(R.layout.fragment_article) {
+class ArticleFragment: Fragment() {
     private var _binding: FragmentArticleBinding? = null
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!

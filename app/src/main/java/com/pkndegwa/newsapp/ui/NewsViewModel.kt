@@ -52,8 +52,8 @@ class NewsViewModel(app: Application, private val newsRepository: NewsRepository
         return Resource.Error(response.message())
     }
 
-    fun searchNews(searchQuery: String) = viewModelScope.launch {
-        safeSearchNewsCall(searchQuery)
+    fun searchNews(searchQuery: String?) = viewModelScope.launch {
+        searchQuery?.let { safeSearchNewsCall(it) }
     }
 
     private fun handleSearchNewsResponse(response: Response<NewsResponse>): Resource<NewsResponse> {

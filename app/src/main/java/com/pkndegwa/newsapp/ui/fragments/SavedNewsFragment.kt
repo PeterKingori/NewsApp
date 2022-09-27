@@ -16,7 +16,7 @@ import com.pkndegwa.newsapp.adapters.NewsAdapter
 import com.pkndegwa.newsapp.databinding.FragmentSavedNewsBinding
 import com.pkndegwa.newsapp.ui.NewsViewModel
 
-class SavedNewsFragment : Fragment(R.layout.fragment_saved_news) {
+class SavedNewsFragment : Fragment() {
     private var _binding: FragmentSavedNewsBinding? = null
 
     // This property is only valid between onCreateView and onDestroyView.

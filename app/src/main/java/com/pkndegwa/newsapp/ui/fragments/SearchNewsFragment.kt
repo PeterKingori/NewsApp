@@ -25,15 +25,16 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class SearchNewsFragment: Fragment(R.layout.fragment_search_news) {
+class SearchNewsFragment : Fragment() {
     private var _binding: FragmentSearchNewsBinding? = null
+
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
 
     private val viewModel: NewsViewModel by activityViewModels()
     private lateinit var newsAdapter: NewsAdapter
 
-    private val TAG = "BreakingNewsFragment"
+    private val TAG = "SearchNewsFragment"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentSearchNewsBinding.inflate(inflater, container, false)
@@ -66,14 +67,14 @@ class SearchNewsFragment: Fragment(R.layout.fragment_search_news) {
                         val totalPages = newsResponse.totalResults / Constants.QUERY_PAGE_SIZE + 2
                         isLastPage = viewModel.searchNewsPage == totalPages
                         if (isLastPage) {
-                            binding.searchNewsRecyclerView.setPadding(0,0,0,0)
+                            binding.searchNewsRecyclerView.setPadding(0, 0, 0, 0)
                         }
                     }
                 }
                 is Resource.Error -> {
                     hideProgressBar()
                     response.message?.let { message ->
-                        Toast.makeText(activity, "An error occurred: $message", Toast.LENGTH_LONG).show()
+                        Toast.makeText(activity, "An error occurred: $message", Toast.LENGTH_SHORT).show()
                         Log.e(TAG, "An error occurred: $message")
                     }
                 }
@@ -108,7 +109,7 @@ class SearchNewsFragment: Fragment(R.layout.fragment_search_news) {
     private val scrollingListener = object : RecyclerView.OnScrollListener() {
         override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
             super.onScrollStateChanged(recyclerView, newState)
-            if (newState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL){
+            if (newState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL) {
                 isScrolling = true
             }
         }
