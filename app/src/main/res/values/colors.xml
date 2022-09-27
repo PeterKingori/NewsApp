@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Dark theme colours -->
+    <color name="dark_primary_color">#141414</color>
+    <color name="dark_primary_dark_color">#141414</color>
+    <color name="dark_bg_color">#141414</color>
+    <color name="dark_text_color">#FAFAFA</color>
+    <color name="dark_icon_tint_color">#A2A2A2</color>
+
+    <!-- Light theme colours -->
+    <color name="light_text_color">#363636</color>
+    <color name="light_bg_color">#FFFFFF</color>
 </resources>
