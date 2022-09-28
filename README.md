@@ -34,3 +34,4 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 ## Acknowledgements
 This project was created following the tutorial by [Philipp Lackner](https://www.youtube.com/playlist?list=PLQkwcJG4YTCRF8XiCRESq1IFFW8COlxYJ) on YouTube, with a few adjustments to his code. The code is available on Github at [philipplackner/MVVMNewsApp](https://github.com/philipplackner/MVVMNewsApp/tree/master).
+Launcher icon by <a href="https://www.freepik.com/free-vector/microphones-recorders-journalism-symbol_29082034.htm#query=news%20icons&position=0&from_view=search">Image by Rochak Shukla</a> on Freepik
